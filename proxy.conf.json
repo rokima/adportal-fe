@@ -1,0 +1,12 @@
+[
+  {
+    "context": [
+      "/api"
+    ],
+    "target": "http://localhost:12346",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "headers": {"X-Remote-User":"peeter.meeter"}
+  }
+]

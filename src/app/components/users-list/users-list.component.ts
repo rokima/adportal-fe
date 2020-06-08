@@ -6,7 +6,7 @@ import { UserService } from '../../services/user.service';
   templateUrl: './users-list.component.html'
 })
 export class UsersListComponent implements OnInit {
-  users: any
+  users: any;
 
   constructor(private userSerice: UserService) { }
 
