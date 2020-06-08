@@ -1,0 +1,9 @@
+.view-header-wrapper {
+  padding: 20px 40px;
+  background-color: #dff0d8;
+}
+
+.navigation-link {
+  font-weight: bold;
+  margin-right: 20px;
+}

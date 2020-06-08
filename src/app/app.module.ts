@@ -7,12 +7,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { TermsComponent } from './components/terms/terms.component';
+import { HomeComponent } from './components/home/home.component';
+import { ViewHeaderComponent } from './components/view-header/view-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersListComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    TermsComponent,
+    HomeComponent,
+    ViewHeaderComponent
   ],
   imports: [
     BrowserModule,
