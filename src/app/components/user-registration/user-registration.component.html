@@ -77,5 +77,11 @@
 </div>
 
 <ng-template #success>
-  <h2 class="text-success">User successfully added!</h2>
+  <div class="text-center">
+    <h2 class="text-success">User successfully added!</h2>
+    <button
+      [routerLink]="'/home'"
+      class="btn btn-outline-secondary mt-2">Back to home page
+    </button>
+  </div>
 </ng-template>

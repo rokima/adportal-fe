@@ -8,7 +8,7 @@ import { User } from '../../models/user';
 })
 export class UserRegistrationComponent {
   user = new User();
-  isUserAdded = false;
+  isUserAdded = true;
 
   constructor(private userService: UserService) {
   }
