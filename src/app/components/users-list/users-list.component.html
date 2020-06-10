@@ -1,5 +1,5 @@
 <h1>List of users</h1>
-
+<ng-container *ngIf="loaded; else spinner">
 <table class="table table-striped">
   <thead>
   <tr>
@@ -24,3 +24,8 @@
   </tr>
   </tbody>
 </table>
+</ng-container>
+
+<ng-template #spinner>
+  <adp-spinner></adp-spinner>
+</ng-template>

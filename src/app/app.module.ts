@@ -10,6 +10,7 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { TermsComponent } from './components/terms/terms.component';
 import { HomeComponent } from './components/home/home.component';
 import { ViewHeaderComponent } from './components/view-header/view-header.component';
+import {SpinnerComponent} from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ViewHeaderComponent } from './components/view-header/view-header.compon
     UserRegistrationComponent,
     TermsComponent,
     HomeComponent,
-    ViewHeaderComponent
+    ViewHeaderComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

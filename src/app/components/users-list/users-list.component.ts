@@ -8,12 +8,14 @@ import { User } from '../../models/user';
 })
 export class UsersListComponent implements OnInit {
   users: User[];
+  loaded = false;
 
   constructor(private userSerice: UserService) { }
 
   ngOnInit() {
     this.userSerice.getUsers().subscribe(res => {
       this.users = res;
+      this.loaded = true;
     });
   }
 
