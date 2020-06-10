@@ -15,7 +15,7 @@ export class UserRegistrationComponent {
   registerUser() {
     if (this.isUserValid()) {
       this.userService.addUser(this.user).subscribe(res => {
-        alert(this.user.firstName);
+        alert(this.user.FirstName);
       });
     } else {
       alert('Please fill all required fields');
@@ -23,7 +23,7 @@ export class UserRegistrationComponent {
   }
 
   isUserValid(): boolean {
-    if (!this.user.firstName || !this.user.lastName || !this.user.email || !this.user.login || !this.user.password ) {
+    if (!this.user.FirstName || !this.user.LastName || !this.user.Email || !this.user.Login || !this.user.Password ) {
       return false;
     }
 

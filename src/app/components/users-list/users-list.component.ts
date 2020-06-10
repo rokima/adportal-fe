@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'adp-users-list',
   templateUrl: './users-list.component.html'
 })
 export class UsersListComponent implements OnInit {
-  users: any;
+  users: User[];
 
   constructor(private userSerice: UserService) { }
 
