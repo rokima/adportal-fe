@@ -8,6 +8,7 @@ import { User } from '../../models/user';
 })
 export class UserRegistrationComponent {
   user = new User();
+  isUserAdded = false;
 
   constructor(private userService: UserService) {
   }
@@ -15,7 +16,7 @@ export class UserRegistrationComponent {
   registerUser() {
     if (this.isUserValid()) {
       this.userService.addUser(this.user).subscribe(res => {
-        alert(this.user.FirstName);
+        this.isUserAdded = true;
       });
     } else {
       alert('Please fill all required fields');
