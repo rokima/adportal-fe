@@ -3,10 +3,9 @@
     "context": [
       "/api"
     ],
-    "target": "http://localhost:12346",
+    "target": "https://localhost:44330",
     "secure": false,
     "changeOrigin": true,
-    "logLevel": "debug",
-    "headers": {"X-Remote-User":"peeter.meeter"}
+    "logLevel": "debug"
   }
 ]
