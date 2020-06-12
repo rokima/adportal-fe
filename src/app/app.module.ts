@@ -9,8 +9,9 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { TermsComponent } from './components/terms/terms.component';
 import { HomeComponent } from './components/home/home.component';
+import { HomeAdSectionComponent } from './components/home/home-ad-section.component';
 import { ViewHeaderComponent } from './components/view-header/view-header.component';
-import {SpinnerComponent} from './components/spinner/spinner.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {SpinnerComponent} from './components/spinner/spinner.component';
     UserRegistrationComponent,
     TermsComponent,
     HomeComponent,
+    HomeAdSectionComponent,
     ViewHeaderComponent,
     SpinnerComponent
   ],
