@@ -63,11 +63,12 @@
         <p><small>* Required fields</small></p>
         <div class="checkbox">
           <label>
-            <input type="checkbox"> * Accepting <a [routerLink]="'/terms'">user terms</a>
+            <input [(ngModel)]="termsAccepted" type="checkbox"> * Accepting <a [routerLink]="'/terms'">user terms</a>
           </label>
         </div>
         <button class="btn btn-danger">Cancel</button>
         <button
+          [disabled]="!isUserValid()"
           (click)="registerUser()"
           class="btn btn-outline-success float-right">Register
         </button>

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {UserService} from '../../services/user.service';
-import { User } from '../../models/user';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'adp-user-registration',
@@ -8,7 +8,8 @@ import { User } from '../../models/user';
 })
 export class UserRegistrationComponent {
   user = new User();
-  isUserAdded = true;
+  termsAccepted = false;
+  isUserAdded = false;
 
   constructor(private userService: UserService) {
   }
@@ -24,7 +25,12 @@ export class UserRegistrationComponent {
   }
 
   isUserValid(): boolean {
-    if (!this.user.FirstName || !this.user.LastName || !this.user.Email || !this.user.Login || !this.user.Password ) {
+    if (!this.user.FirstName
+      || !this.user.LastName
+      || !this.user.Email
+      || !this.user.Login
+      || !this.user.Password
+      || !this.termsAccepted) {
       return false;
     }
 
