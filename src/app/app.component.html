@@ -1,4 +1,10 @@
-<adp-view-header></adp-view-header>
-<div class="container-fluid mt-5">
-  <router-outlet></router-outlet>
-</div>
+<ng-container *ngIf="appDataLoaded; else spinner">
+  <adp-view-header></adp-view-header>
+  <div class="container-fluid mt-5">
+    <router-outlet></router-outlet>
+  </div>
+</ng-container>
+
+<ng-template #spinner>
+  <adp-spinner></adp-spinner>
+</ng-template>
