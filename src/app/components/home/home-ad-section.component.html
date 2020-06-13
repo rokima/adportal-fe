@@ -1,16 +1,32 @@
 <h2>{{ category.Name }}</h2>
 
-<div class="row">
-  <div class="col-6">
-    <div class="card">
-      <div class="card-header">
-        Cars/Selling
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">VW Beetle 1.6</h5>
-        <p class="card-text">Selling VW Beetle in great condition! Grandma used to for sunday church travel</p>
-        <a href="#">Details</a>
-      </div>
-    </div>
+<ng-container *ngIf="loaded; else spinner">
+  <div class="row">
+    <ng-container *ngIf="advertisements.length; else noAds">
+      <ng-container *ngFor="let advertisement of advertisements">
+        <div class="col-6">
+          <div class="card">
+            <div class="card-header">
+              {{ advertisement.Title }}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ advertisement.Price }}</h5>
+              <p class="card-text">{{ advertisement.Description }}</p>
+              <a href="#">Details</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
   </div>
-</div>
+</ng-container>
+
+<ng-template #spinner>
+  <adp-spinner></adp-spinner>
+</ng-template>
+
+<ng-template #noAds>
+  <div class="col-12 text-danger">
+    No advertisements in this category
+  </div>
+</ng-template>

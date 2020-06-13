@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from '../models/user';
 import {Category} from '../models/category';
+import {Advertisement} from '../models/advertisement';
 
 @Injectable({
   providedIn: 'root',
@@ -14,5 +15,9 @@ export class AdvertisementService {
 
   getAdvertisementCategories(): Observable<Category[]> {
     return this.http.get<Category[]>('/api/Categories');
+  }
+
+  getAdvertisementsByCategory(categoryId) {
+    return this.http.get<Advertisement[]>('/api/Advertisements/Category/' + categoryId);
   }
 }
