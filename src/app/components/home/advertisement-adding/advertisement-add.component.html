@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-8 offset-md-2 offset-lg-3 col-lg-6">
+      <ng-container *ngIf="!isAdvertisementAdded; else success">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <label for="InputTitle">Title*</label>
+            <input
+              [(ngModel)]="advertisement.Title"
+              type="text" class="form-control" id="InputTitle" placeholder="Title">
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="InputLastName">Last name*</label>
+            <input
+              [(ngModel)]="user.LastName"
+              type="text" class="form-control" id="InputLastName" placeholder="Last name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <label for="InputEmail">Email*</label>
+            <input
+              [(ngModel)]="user.Email"
+              type="email" class="form-control" id="InputEmail" placeholder="E-mail">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <label for="InputLogin">Login*</label>
+            <input
+              [(ngModel)]="user.Login"
+              type="text" class="form-control" id="InputLogin" placeholder="Login">
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="InputPassword">Password*</label>
+            <input
+              [(ngModel)]="user.Password"
+              type="password" class="form-control" id="InputPassword" placeholder="Password">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <label for="InputCountry">Country</label>
+            <input
+              [(ngModel)]="user.Country"
+              type="text" class="form-control" id="InputCountry" placeholder="Country">
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="InputCity">City</label>
+            <input
+              [(ngModel)]="user.City"
+              type="text" class="form-control" id="InputCity" placeholder="City">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <label for="InputAddress">Address</label>
+            <input
+              [(ngModel)]="user.Address"
+              type="text" class="form-control" id="InputAddress" placeholder="Address">
+          </div>
+        </div>
+        <p><small>* Required fields</small></p>
+        <div class="checkbox">
+          <label>
+            <input [(ngModel)]="termsAccepted" type="checkbox"> * Accepting <a [routerLink]="'/terms'">user terms</a>
+          </label>
+        </div>
+        <button class="btn btn-danger">Cancel</button>
+        <button
+          [disabled]="!isUserValid()"
+          (click)="registerUser()"
+          class="btn btn-outline-success float-right">Register
+        </button>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #success>
+  <div class="text-center">
+    <h2 class="text-success">User successfully added!</h2>
+    <button
+      [routerLink]="'/home'"
+      class="btn btn-outline-secondary mt-2">Back to home page
+    </button>
+  </div>
+</ng-template>
