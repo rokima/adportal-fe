@@ -66,7 +66,7 @@
             <input [(ngModel)]="termsAccepted" type="checkbox"> * Accepting <a [routerLink]="'/terms'">user terms</a>
           </label>
         </div>
-        <button class="btn btn-danger">Cancel</button>
+        <button [routerLink]="'/home'" class="btn btn-danger">Cancel</button>
         <button
           [disabled]="!isUserValid()"
           (click)="registerUser()"

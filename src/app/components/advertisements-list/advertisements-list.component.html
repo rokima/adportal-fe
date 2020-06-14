@@ -1,4 +1,4 @@
-<h1>List of users</h1>
+<h1>Advertisements</h1>
 <ng-container *ngIf="loaded; else spinner">
   <table class="table table-striped">
     <thead>
@@ -21,6 +21,9 @@
     </tbody>
   </table>
 </ng-container>
+<p class="text-center">
+  <button class="btn btn-success" [routerLink]="'/advertisements-new'">Add new advertisement</button>
+</p>
 
 <ng-template #spinner>
   <adp-spinner></adp-spinner>

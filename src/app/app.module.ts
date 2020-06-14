@@ -14,6 +14,7 @@ import {ViewHeaderComponent} from './components/view-header/view-header.componen
 import {SpinnerComponent} from './components/spinner/spinner.component';
 import {AdvertisementsListComponent} from './components/advertisements-list/advertisements-list.component';
 import {AdvertisementDetailsComponent} from './components/advertisement-details/advertisement-details.component';
+import {AdvertisementAddComponent} from './components/advertisement-add/advertisement-add.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {AdvertisementDetailsComponent} from './components/advertisement-details/
     ViewHeaderComponent,
     SpinnerComponent,
     AdvertisementsListComponent,
-    AdvertisementDetailsComponent
+    AdvertisementDetailsComponent,
+    AdvertisementAddComponent
   ],
   imports: [
     BrowserModule,

@@ -29,4 +29,8 @@ export class AdvertisementService {
   getAdvertisementsByCategory(categoryId) {
     return this.http.get<Advertisement[]>('/api/Advertisements/Category/' + categoryId);
   }
+
+  addAdvertisement(advertisement: Advertisement) {
+    return this.http.post('/api/Advertisements', advertisement);
+  }
 }
