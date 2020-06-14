@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HomeAdSectionComponent } from './components/home/home-ad-section.component';
 import { ViewHeaderComponent } from './components/view-header/view-header.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import {AdvertisementsListComponent} from './components/advertisements-list/advertisements-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     HomeComponent,
     HomeAdSectionComponent,
     ViewHeaderComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    AdvertisementsListComponent
   ],
   imports: [
     BrowserModule,

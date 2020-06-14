@@ -17,6 +17,11 @@ export class AdvertisementService {
     return this.http.get<Category[]>('/api/Categories');
   }
 
+  getAllAdvertisements(sort?) {
+    sort = sort || 'newer';
+    return this.http.get<Advertisement[]>('/api/Advertisements?sort=' + sort);
+  }
+
   getAdvertisementsByCategory(categoryId) {
     return this.http.get<Advertisement[]>('/api/Advertisements/Category/' + categoryId);
   }
