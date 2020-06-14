@@ -3,6 +3,7 @@ import {AdvertisementService} from '../../services/advertisement.service';
 import {ClassifierService} from '../../services/classifier.service';
 import {Advertisement} from '../../models/advertisement';
 import {Category} from '../../models/category';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'adp-advertisements-list',
@@ -13,17 +14,35 @@ export class AdvertisementsListComponent implements OnInit {
   advertisements: Advertisement[];
   categories: Category[];
   categoriesMap: any = {};
+  categoryId = null;
 
   constructor(private advertisementService: AdvertisementService,
-              private classifierService: ClassifierService) {
+              private classifierService: ClassifierService,
+              private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.advertisementService.getAllAdvertisements().subscribe(res => {
-      this.prepareCategories();
-      this.advertisements = res;
-      this.loaded = true;
-    });
+    this.categoryId = this.activatedRoute.snapshot.queryParamMap.get('categoryId');
+    this.prepareCategories();
+    this.loadAdvertisements(this.categoryId);
+  }
+
+  loadAdvertisements(categoryId) {
+    this.loaded = false;
+    if (categoryId) {
+      this.advertisementService.getAdvertisementsByCategory(categoryId).subscribe(res => {
+        this.displayAdvertisements(res);
+      });
+    } else {
+      this.advertisementService.getAllAdvertisements().subscribe(res => {
+        this.displayAdvertisements(res);
+      });
+    }
+  }
+
+  private displayAdvertisements(advertisements: Advertisement[]) {
+    this.advertisements = advertisements;
+    this.loaded = true;
   }
 
   private prepareCategories() {

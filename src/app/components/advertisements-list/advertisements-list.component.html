@@ -1,5 +1,17 @@
 <h1>Advertisements</h1>
+
 <ng-container *ngIf="loaded; else spinner">
+  <div class="row my-3">
+    <div class="col-12 col-md-4 col-xl-2">
+      <label for="categorySelect">Category</label>
+      <select [(ngModel)]="categoryId" class="form-control" id="categorySelect"
+        (ngModelChange)="loadAdvertisements($event)">
+        <ng-container *ngFor="let category of categories">
+          <option [value]="category.Id">{{ category.Name }}</option>
+        </ng-container>
+      </select>
+    </div>
+  </div>
   <table class="table table-striped">
     <thead>
     <tr>

@@ -1,4 +1,5 @@
 <h4 class="mt-4 mb-2">{{ category.Name }}</h4>
+<p class="small"><a [routerLink]="'/advertisements-list'" [queryParams]="{categoryId: category.Id}">view all</a></p>
 
 <ng-container *ngIf="loaded; else spinner">
   <div class="row">
