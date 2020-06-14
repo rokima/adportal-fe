@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { TermsComponent } from './components/terms/terms.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import {AdvertisementsListComponent} from './components/advertisements-list/advertisements-list.component';
+import {AdvertisementDetailsComponent} from './components/advertisement-details/advertisement-details.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'registration', component: UserRegistrationComponent },
   {path: 'terms', component: TermsComponent },
   {path: 'users-list', component: UsersListComponent },
-  {path: 'advertisements-list', component: AdvertisementsListComponent }
+  {path: 'advertisements-list', component: AdvertisementsListComponent },
+  {path: 'advertisement/:id', component: AdvertisementDetailsComponent },
 ];
 
 @NgModule({

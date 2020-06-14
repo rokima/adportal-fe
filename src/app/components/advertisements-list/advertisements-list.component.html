@@ -16,7 +16,7 @@
       <td>{{ advertisement.CreationDate | date: 'dd.MM.yyyy'}}</td>
       <td>{{ categoriesMap[advertisement.CategoryId] }}</td>
       <td>{{ advertisement.Price }} €</td>
-      <td><a [routerLink]="''">view</a></td>
+      <td><a [routerLink]="'/advertisement/' + advertisement.Id">view</a></td>
     </tr>
     </tbody>
   </table>

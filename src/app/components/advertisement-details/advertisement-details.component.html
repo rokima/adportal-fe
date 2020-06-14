@@ -1,0 +1,14 @@
+<ng-container *ngIf="loaded; else loading">
+  <div class="row">
+    <div class="col-12 col-md-8 offset-md-2 offset-lg-3 col-lg-6">
+      <h3>{{advertisement.Title}}</h3>
+      <p>{{advertisement.Description}}</p>
+      <p>Price: <span class="font-weight-bold">{{advertisement.Price}}</span> €</p>
+      <p class="text-right text-muted">{{ advertisement.CreationDate | date: 'dd.MM.yyyy' }}</p>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <adp-spinner></adp-spinner>
+</ng-template>
