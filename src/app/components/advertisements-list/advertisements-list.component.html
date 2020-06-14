@@ -1,0 +1,27 @@
+<h1>List of users</h1>
+<ng-container *ngIf="loaded; else spinner">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date added</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let advertisement of advertisements">
+      <td>{{ advertisement.Title }}</td>
+      <td>{{ advertisement.CreationDate | date: 'dd.MM.yyyy'}}</td>
+      <td>{{ categoriesMap[advertisement.CategoryId] }}</td>
+      <td>{{ advertisement.Price }} €</td>
+      <td><a [routerLink]="''">view</a></td>
+    </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+<ng-template #spinner>
+  <adp-spinner></adp-spinner>
+</ng-template>
